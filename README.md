@@ -12,6 +12,7 @@
 
 **Используйте следующий скрипт для создания необходимых таблиц:**
 
+```
 CREATE TABLE Users (
     Id INT PRIMARY KEY IDENTITY(1,1),
     FirstName NVARCHAR(100),
@@ -30,6 +31,7 @@ CREATE TABLE Cards (
     UserId INT,
     FOREIGN KEY (UserId) REFERENCES Users(Id)
 );
+```
 
 ### Настройка и сборка фронтенда
 1. Создайте React проект:
@@ -56,7 +58,8 @@ npm run build
 3. Настройка файла web.config
 Создайте файл web.config в корневой папке build и вставьте в него следующее содержание:
 
-'''<?xml version="1.0" encoding="UTF-8"?>
+```
+<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
   <system.webServer>
     <rewrite>
@@ -74,7 +77,6 @@ npm run build
           <!-- Действие: Переписать URL на корневой путь приложения -->
           <action type="Rewrite" url="/" />
         </rule>
-
         <!-- Правило для проксирования API-запросов на бэкэнд -->
         <rule name="API Proxy" stopProcessing="true">
           <!-- Совпадение с URL, начинающимся с "api/" -->
@@ -84,12 +86,10 @@ npm run build
         </rule>
       </rules>
     </rewrite>
-    
     <staticContent>
       <!-- Настройка MIME-типа для JSON файлов -->
       <mimeMap fileExtension=".json" mimeType="application/json" />
     </staticContent>
-    
     <httpProtocol>
       <customHeaders>
         <!-- Разрешение кросс-доменных запросов от любого источника -->
@@ -101,7 +101,8 @@ npm run build
       </customHeaders>
     </httpProtocol>
   </system.webServer>
-</configuration>'''
+</configuration>
+```
 
 #### Описание:
 React Routes Rule (Правило для маршрутизации в React)
