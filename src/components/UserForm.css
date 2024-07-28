@@ -1,0 +1,47 @@
+/* Стили для компонента формы пользователя */
+.user-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .user-form h1 {
+    border-bottom: 3px solid #353535;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+  .user-form .btn-primary,.btn-secondary {
+    padding: 5px;
+    text-decoration: none;
+    background: #ededed;
+    border: 1px solid #ccc;
+    padding: 10px 30px;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #000;
+}
+.user-form .btn-primary:active,.btn-secondary:active {
+    background: #e5e5e5;
+    box-shadow: inset 0px 0px 5px #c1c1c1;
+    outline: none;
+    color: #2c2c2c;
+}
