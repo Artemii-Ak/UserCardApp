@@ -35,12 +35,12 @@ CREATE TABLE Cards (
 
 ### Настройка и сборка фронтенда
 1. Создайте React проект:
-npx create-react-app Name_Project
+- npx create-react-app Name_Project
 2. Перейдите в директорию вашего React проекта.
-cd Name_Project
+- cd Name_Project
 3. Установите зависимости и выполните сборку проекта.
-npm install axios react-router-dom
-npm run build
+- npm install axios react-router-dom
+- npm run build
 
 #### Переместите содержимое папки build в директорию, предназначенную для вашего веб-приложения на IIS.
 
@@ -105,24 +105,25 @@ npm run build
 ```
 
 #### Описание:
-React Routes Rule (Правило для маршрутизации в React)
-match url=".*": Совпадение с любым URL.
-conditions: Условия, которые должны быть выполнены для применения правила.
-action type="Rewrite" url="/": Переписать URL на корневой путь приложения (/), чтобы все запросы обрабатывались React приложением.
-API Proxy Rule (Правило для проксирования API-запросов)
+**React Routes Rule (Правило для маршрутизации в React)**
+- match url=".*": Совпадение с любым URL.
+- conditions: Условия, которые должны быть выполнены для применения правила.
+- action type="Rewrite" url="/": Переписать URL на корневой путь приложения (/), чтобы все запросы обрабатывались React приложением.
 
-match url="^(api/.*)$": Совпадение с URL, начинающимся с api/.
-action type="Rewrite" url="http://localhost:80/{R:1}": Переписать URL на соответствующий URL бэкэнда, запуская его на http://localhost:80/. {R:1} используется для передачи остальной части URL после api/.
-Static Content (Статическое содержимое)
+**API Proxy Rule (Правило для проксирования API-запросов)**
+- match url="^(api/.*)$": Совпадение с URL, начинающимся с api/.
+- action type="Rewrite" url="http://localhost:80/{R:1}": Переписать URL на соответствующий URL бэкэнда, запуская его на http://-localhost:80/. {R:1} используется для передачи остальной части URL после api/.
 
-mimeMap fileExtension=".json" mimeType="application/json": Установка MIME-типа для файлов с расширением .json как application/json.
+**Static Content (Статическое содержимое)**
+- mimeMap fileExtension=".json" mimeType="application/json": Установка MIME-типа для файлов с расширением .json как application/json.
 
-HTTP Protocol (HTTP Протокол)
-customHeaders: Настройка пользовательских заголовков HTTP.
-Access-Control-Allow-Origin: Разрешить кросс-доменные запросы от любого источника (*).
-Access-Control-Allow-Methods: Разрешить методы HTTP: GET, POST, PUT, DELETE, OPTIONS.
-Access-Control-Allow-Headers: Разрешить заголовок Content-Type в кросс-доменных запросах.
-Эти правила обеспечивают правильную маршрутизацию всех запросов в React приложение и проксирование API-запросов на бэкэнд.
+**HTTP Protocol (HTTP Протокол)**
+- customHeaders: Настройка пользовательских заголовков HTTP.
+- Access-Control-Allow-Origin: Разрешить кросс-доменные запросы от любого источника (*).
+- Access-Control-Allow-Methods: Разрешить методы HTTP: GET, POST, PUT, DELETE, OPTIONS.
+- Access-Control-Allow-Headers: Разрешить заголовок Content-Type в кросс-доменных запросах.
+
+#### Эти правила обеспечивают правильную маршрутизацию всех запросов в React приложение и проксирование API-запросов на бэкэнд.
 
 ### Настройка прав доступа
 1. Щелкните правой кнопкой мыши на директорию вашего сайта в проводнике Windows и выберите "Свойства".
